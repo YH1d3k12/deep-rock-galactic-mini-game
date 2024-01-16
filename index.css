@@ -1,0 +1,99 @@
+:root {
+    --page-background-color: #1a1710;
+    --game-screen-background-color: #4a4334;
+    --game-screen-border-color: #c4c4c4;
+}
+
+* {
+    box-sizing: border-box;
+    padding: 0;
+    border: 0;
+    margin: 0;
+    font-family: 'Poppins', sans-serif;
+    text-decoration: none;
+    list-style: none;
+}
+
+body {
+    height: 100vh;
+    width: 100%;
+
+    background-color: var(--page-background-color);
+}
+
+.game-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    height: 80%;
+    width: 100%;
+}
+
+.game-screen {
+    position: relative;
+
+    height: 410px;
+    width: 820px;
+    border: solid 1px var(--game-screen-border-color);
+    border-radius: 8px;
+
+    background-color: var(--game-screen-background-color);
+}
+
+.rock {
+    position: absolute;
+
+    height: 100px;
+    width: 100px;
+
+    background-color: cadetblue;
+}
+
+.rock-1 {
+    bottom: 0%;
+    left: 8%;
+}
+
+.rock-2 {
+    bottom: 0%;
+    left: 30%;
+}
+
+.rock-3 {
+    bottom: 0%;
+    right: 8%;
+}
+
+.rock-4 {
+    bottom: 0%;
+    right: 30%;
+}
+
+.rock-5 {
+    top: 40%;
+    left: 20%;
+    scale: 0.9;
+}
+
+.rock-6 {
+    top: 40%;
+    right: 20%;
+    scale: 0.9;
+}
+
+.rock-7 {
+    top: 0%;
+    left: 10%;
+}
+
+.rock-8 {
+    top: 0%;
+    left: 43%;
+    scale: 0.9;
+}
+
+.rock-9 {
+    top: 0%;
+    right: 10%;
+}
