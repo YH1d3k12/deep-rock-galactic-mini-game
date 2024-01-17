@@ -43,16 +43,35 @@ body {
 
 .rock {
     position: absolute;
+    display: flex;
+    align-items: start;
+    justify-content: center;
 
+    height: 150px;
+    width: 150px;
+
+    background-image: url("./images/pipe.png");
+    background-size: cover;
+}
+
+.rock img {
     height: 100px;
     width: 100px;
+    animation: raise .3s ease-out;
+}
 
-    background-color: cadetblue;
+@keyframes raise {
+    0% {
+        transform: translateY(100%);
+    }
+    100% {
+        transform: translateY(0%);
+    }
 }
 
 .rock-1 {
     bottom: 0%;
-    left: 8%;
+    left: 1%;
 }
 
 .rock-2 {
@@ -62,7 +81,7 @@ body {
 
 .rock-3 {
     bottom: 0%;
-    right: 8%;
+    right: 1%;
 }
 
 .rock-4 {
@@ -71,29 +90,32 @@ body {
 }
 
 .rock-5 {
-    top: 40%;
+    top: 35%;
     left: 20%;
-    scale: 0.9;
+    scale: 0.8;
 }
 
 .rock-6 {
-    top: 40%;
+    top: 35%;
     right: 20%;
-    scale: 0.9;
+    scale: 0.8;
 }
 
 .rock-7 {
     top: 0%;
     left: 10%;
+    transform: rotate(180deg);
 }
 
 .rock-8 {
     top: 0%;
     left: 43%;
-    scale: 0.9;
+    scale: 0.8;
+    transform: rotate(180deg);
 }
 
 .rock-9 {
     top: 0%;
     right: 10%;
+    transform: rotate(180deg);
 }
