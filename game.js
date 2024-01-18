@@ -1,6 +1,7 @@
 const rocks = [...document.querySelectorAll(".rock")];
 let currentFriendlyCreature;
 let currentHostileCreature;
+let score = 0;
 
 window.onload = function () {
 	startGame();
@@ -31,6 +32,11 @@ function createFriendlyCreature() {
 	
 	let creature = document.createElement("img");
 	creature.src = "./images/monty-mole.png";
+
+	creature.addEventListener("click", () => {
+		score += 10;
+		document.getElementById("score").innerText = score.toString();
+	})
 
 	currentFriendlyCreature.appendChild(creature);
 }

@@ -21,6 +21,10 @@ body {
     background-color: var(--page-background-color);
 }
 
+#score {
+    color: white;
+}
+
 .game-container {
     display: flex;
     align-items: center;
