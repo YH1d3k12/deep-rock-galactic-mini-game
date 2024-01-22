@@ -19,6 +19,7 @@ function startGame() {
 	friendlyCreatureInterval = setInterval(createFriendlyCreature, 1000);
 	hostileCreatureInterval = setInterval(createHostileCreature, 1500);
 }
+
 function stopGame() {
 	removeClickEvents();
 	clearInterval(friendlyCreatureInterval);
@@ -35,42 +36,61 @@ function handleHostileCreatureClick() {
 	scoreCounter.innerText = "GAME OVER: " + score.toString();
 	stopGame();
 }
-function getRandomTile() {
-	return tile = Math.floor(Math.random() * rocks.length);
+
+function getRandomNumber(maxNum) {
+	return num = Math.floor(Math.random() * maxNum);
 }
 
 function createFriendlyCreature() {
+	// Removes creature from previous rock.
 	if (currentFriendlyCreature) {
 		currentFriendlyCreature.innerHTML = "";
 	}
 
-	let rock = getRandomTile();
+	// Places creature on rock.
+	let rock = getRandomNumber(9);
 	if (currentHostileCreature && currentHostileCreature.getAttribute("tile") == rock) {
 		return;
 	}
-
 	currentFriendlyCreature = rocks[rock];
-	
-	let creature = document.createElement("img");
-	creature.src = "./images/monty-mole.png";
 
+	// Creates creature.
+	let creature = document.createElement("img");
+
+	let type = getRandomNumber(4);
+	switch (type) {
+		case 0:
+			creature.src = "./images/dwarfs/driller.png";
+			break;
+		case 1:
+			creature.src = "./images/dwarfs/enginner.png";
+			break;
+		case 2:
+			creature.src = "./images/dwarfs/gunner.png";
+			break;
+		case 3:
+			creature.src = "./images/dwarfs/scout.png";
+			break;
+	}
 	creature.addEventListener("click", handleFriendlyCreatureClick);
 
 	currentFriendlyCreature.appendChild(creature);
 }
 
 function createHostileCreature() {
+	// Removes creature from previous rock.
 	if (currentHostileCreature) {
 		currentHostileCreature.innerHTML = "";
 	}
 
-	let rock = getRandomTile();
+	// Places creature on rock.
+	let rock = getRandomNumber(9);
 	if (currentFriendlyCreature && currentFriendlyCreature.getAttribute("tile") == rock) {
 		return;
 	}
-
 	currentHostileCreature = rocks[rock];
 
+	// Creates creature.
 	let creature = document.createElement("img");
 	creature.src = "./images/piranha-plant.png";
 

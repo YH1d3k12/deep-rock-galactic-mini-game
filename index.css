@@ -37,8 +37,8 @@ body {
 .game-screen {
     position: relative;
 
-    height: 410px;
-    width: 820px;
+    height: 640px;
+    width: 1280px;
     border: solid 1px var(--game-screen-border-color);
     border-radius: 8px;
 
@@ -51,16 +51,18 @@ body {
     align-items: start;
     justify-content: center;
 
-    height: 150px;
-    width: 150px;
+    height: 210px;
+    width: 210px;
 
-    background-image: url("./images/pipe.png");
-    background-size: cover;
+    background-image: url("./images/rock.png");
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+    background-position: center;
 }
 
 .rock img {
-    height: 100px;
-    width: 100px;
+    height: 150px;
+    width: 150px;
     animation: raise .3s ease-out;
 }
 
